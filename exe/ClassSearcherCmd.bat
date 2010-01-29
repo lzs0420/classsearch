@@ -1,1 +1,1 @@
-java -jar ClassSearcher.jar %*
+java -jar ClassSearcher.jar -cmd %*
