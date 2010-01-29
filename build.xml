@@ -11,14 +11,21 @@
 	<description>
             This tool will help search files in zip format files.
     </description>
-
+	<property name="project.version" value="1.0.1" />
 	<property name="src.dir" value="src" />
 	<property name="target.dir" value="release" />
 	<!-- ================================= 
           target: release              
          ================================= -->
-	<target name="release" depends="clean,compile,buildJar" description="--> This tool will help search files in zip format files" />
-
+	<target name="release" depends="clean,compile,buildJar" description="This tool will help search files in zip format files">
+		<zip destfile="${ant.project.name}_${project.version}.zip" basedir="${target.dir}" includes="*">
+		</zip>
+		<delete>
+			<fileset dir="${target.dir}" includes="*" />
+		</delete>
+		<move file="${ant.project.name}_${project.version}.zip" todir="${target.dir}">
+		</move>
+	</target>
 	<!-- - - - - - - - - - - - - - - - - - 
           target: compile                      
          - - - - - - - - - - - - - - - - - -->
