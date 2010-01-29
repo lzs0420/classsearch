@@ -1,4 +1,4 @@
-package com.ssc.tc.ats.util.test;
+package cn.edu.zju.nwrt.util.test;
 
 import java.io.IOException;
 import java.util.Enumeration;
