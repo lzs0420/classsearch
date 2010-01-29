@@ -1,1 +1,1 @@
-start javaw -jar ClassSearcher.jar -gui
+start javaw -jar ClassSearcher.jar
