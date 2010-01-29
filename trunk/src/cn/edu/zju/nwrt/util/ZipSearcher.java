@@ -1,4 +1,4 @@
-package com.ssc.tc.ats.util;
+package cn.edu.zju.nwrt.util;
 
 import java.io.DataInputStream;
 import java.io.File;
@@ -10,7 +10,7 @@ import java.util.zip.ZipInputStream;
 
 import classfile.ClassFile;
 
-import com.ssc.tc.ats.util.gui.ClassSearcherGui;
+import cn.edu.zju.nwrt.utill.gui.ClassSearcherGui;
 
 public class ZipSearcher {
 	private String zipFileName;

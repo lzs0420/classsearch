@@ -1,4 +1,4 @@
-package com.ssc.tc.ats.util.test;
+package cn.edu.zju.nwrt.util.test;
 
 import junit.framework.Test;
 import junit.framework.TestSuite;

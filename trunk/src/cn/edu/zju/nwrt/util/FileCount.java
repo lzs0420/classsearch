@@ -1,4 +1,4 @@
-package com.ssc.tc.ats.util;
+package cn.edu.zju.nwrt.util;
 
 import java.io.File;
 import java.io.FileFilter;

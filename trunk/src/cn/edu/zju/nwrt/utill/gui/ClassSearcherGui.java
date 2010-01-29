@@ -1,4 +1,4 @@
-package com.ssc.tc.ats.util.gui;
+package cn.edu.zju.nwrt.utill.gui;
 
 import java.awt.BorderLayout;
 import java.awt.Component;
@@ -60,8 +60,9 @@ import javax.swing.text.html.HTMLDocument;
 import javax.swing.text.html.HTMLEditorKit;
 import javax.swing.text.html.HTMLFrameHyperlinkEvent;
 
-import com.ssc.tc.ats.util.FileCount;
-import com.ssc.tc.ats.util.ZipSearcher;
+import cn.edu.zju.nwrt.util.FileCount;
+import cn.edu.zju.nwrt.util.ZipSearcher;
+
 import com.swtdesigner.SwingResourceManager;
 
 public class ClassSearcherGui extends JFrame {
