@@ -1,0 +1,57 @@
+<?xml version="1.0"?>
+<!-- ====================================================================== 
+     2006-3-31 13:31:08                                                        
+
+     MessageTransport    
+     This tool will help transport messages and files in subnet.
+                   
+     newroot                                                                
+     ====================================================================== -->
+<project name="ClassSearcher" default="release">
+	<description>
+            This tool will help search files in zip format files.
+    </description>
+
+	<property name="src.dir" value="src" />
+	<property name="target.dir" value="release" />
+	<!-- ================================= 
+          target: release              
+         ================================= -->
+	<target name="release" depends="clean,compile,buildJar" description="--> This tool will help search files in zip format files" />
+
+	<!-- - - - - - - - - - - - - - - - - - 
+          target: compile                      
+         - - - - - - - - - - - - - - - - - -->
+	<target name="compile">
+		<mkdir dir="${target.dir}/classes" />
+		<javac source="1.5" target="1.5" optimize="yes" srcdir="${src.dir}" destdir="${target.dir}/classes">
+			<exclude name="**/test/*" />
+		</javac>
+	</target>
+
+	<target name="buildJar">
+
+		<copy todir="${target.dir}/classes">
+			<fileset dir="${src.dir}">
+				<include name="**/*" />
+				<exclude name="*.java" />
+			</fileset>
+		</copy>
+		<jar destfile="${target.dir}/ClassSearcher.jar" manifest="META-INF/MANIFEST.MF" basedir="${target.dir}/classes">
+		</jar>
+		<delete dir="${target.dir}/classes">
+		</delete>
+		<copy todir="${target.dir}">
+			<fileset dir="exe">
+				<include name="*.*" />
+			</fileset>
+		</copy>
+	</target>
+
+	<target name="clean">
+		<delete dir="${target.dir}">
+		</delete>
+	</target>
+
+</project>
+
