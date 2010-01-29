@@ -56,8 +56,8 @@ public class ClassSearcher {
 					this.dirs[j++] = new File(st.nextToken());
 				}
 			}
-			if (args[i].equals("-gui"))
-				this.gui = true;
+			if (args[i].equals("-cmd"))
+				this.gui = false;
 		}
 		if (((this.exp == null && this.interName == null
 				&& this.className == null && this.methodName == null) || this.dirs == null)
@@ -77,7 +77,7 @@ public class ClassSearcher {
 			System.out
 					.println("\n.zip .jar .war and .ear will be supported in this util.");
 			System.out
-					.println("\nYou can start it with a graphic view with \"-gui\" option.");
+					.println("\nYou can run this application in command line mode with \"-cmd\" option.");
 			return false;
 		}
 		return true;
