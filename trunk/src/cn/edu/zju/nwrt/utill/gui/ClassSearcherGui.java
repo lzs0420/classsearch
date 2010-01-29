@@ -66,7 +66,7 @@ import cn.edu.zju.nwrt.util.ZipSearcher;
 import com.swtdesigner.SwingResourceManager;
 
 public class ClassSearcherGui extends JFrame {
-
+	public static String VERSION = "1.0.1";
 	private JList list;
 	private JTextField expTextField;
 	private JLabel currentProgressLabel;
@@ -125,7 +125,7 @@ public class ClassSearcherGui extends JFrame {
 			ClassSearcherGui.setLookAndFeel();
 		setSize(500, 600);
 		setName("mainDialog");
-		setTitle("Java Class Searcher");
+		setTitle("Java Class Searcher " + VERSION);
 
 		final JPanel panel_3 = new JPanel();
 		panel_3.setMinimumSize(new Dimension(450, 500));
