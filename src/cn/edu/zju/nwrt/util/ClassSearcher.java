@@ -63,6 +63,7 @@ public class ClassSearcher {
 				&& this.className == null && this.methodName == null) || this.dirs == null)
 				&& this.gui == false) {
 			System.out.println("ClassSearcher [options]");
+			System.out.println("Version " + ClassSearcherGui.VERSION);
 			System.out.println("-e Expressoin, follow a query expression");
 			System.out.println("-c ClassName, follow a query class name");
 			System.out
