@@ -346,7 +346,7 @@ public class ClassSearcherGui extends JFrame {
 					curJob = ZipSearcher.METHODSELECED;
 				else
 					curJob = ZipSearcher.EXPRESSIONSELECED;
-				exp = expTextField.getText();
+				exp = expTextField.getText().trim();
 				jobCanceled = false;
 				thread = new Thread(new Runnable() {
 					public void run() {
