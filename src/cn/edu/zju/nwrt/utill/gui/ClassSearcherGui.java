@@ -66,7 +66,7 @@ import cn.edu.zju.nwrt.util.ZipSearcher;
 import com.swtdesigner.SwingResourceManager;
 
 public class ClassSearcherGui extends JFrame {
-	public static String VERSION = "1.0.1";
+	public static String VERSION = "1.0.2";
 	private JList list;
 	private JTextField expTextField;
 	private JLabel currentProgressLabel;
