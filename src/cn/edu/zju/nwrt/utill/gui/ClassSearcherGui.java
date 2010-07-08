@@ -118,8 +118,7 @@ public class ClassSearcherGui extends JFrame {
 
 	public ClassSearcherGui() {
 		super();
-		setIconImage(SwingResourceManager.getImage(ClassSearcherGui.class,
-				"searcher.gif"));
+		setIconImage(SwingResourceManager.getImage(ClassSearcherGui.class, "searcher.gif"));
 		String os = System.getProperty("os.name");
 		if (os.indexOf("indow") >= 0)
 			ClassSearcherGui.setLookAndFeel();
@@ -137,9 +136,8 @@ public class ClassSearcherGui extends JFrame {
 		inputPanel.setMinimumSize(new Dimension(0, 165));
 		inputPanel.setLayout(new BorderLayout());
 		inputPanel.setPreferredSize(new Dimension(0, 280));
-		inputPanel.setBorder(new TitledBorder(null,
-				"Please specify following parameters ...",
-				TitledBorder.LEADING, TitledBorder.TOP, null, null));
+		inputPanel.setBorder(new TitledBorder(null, "Please specify following parameters ...", TitledBorder.LEADING,
+				TitledBorder.TOP, null, null));
 
 		JPanel panel_4 = new JPanel();
 		inputPanel.add(panel_4, BorderLayout.NORTH);
@@ -152,11 +150,9 @@ public class ClassSearcherGui extends JFrame {
 		final JPanel filePanel = new JPanel();
 		filePanel.setPreferredSize(new Dimension(200, 0));
 		filePanel.setLayout(new BorderLayout());
-		filePanel
-				.setBorder(new TitledBorder(
-						null,
-						"Specify files and folders here, you can choose more than one location once.",
-						TitledBorder.LEADING, TitledBorder.TOP, null, null));
+		filePanel.setBorder(new TitledBorder(null,
+				"Specify files and folders here, you can choose more than one location once.", TitledBorder.LEADING,
+				TitledBorder.TOP, null, null));
 
 		final JScrollPane scrollPane = new JScrollPane();
 		filePanel.add(scrollPane);
@@ -173,8 +169,7 @@ public class ClassSearcherGui extends JFrame {
 		final JButton chooseFilesAndButton = new JButton();
 		panel_2.add(chooseFilesAndButton);
 		chooseFilesAndButton.setFocusPainted(false);
-		chooseFilesAndButton.setIcon(SwingResourceManager.getIcon(
-				ClassSearcherGui.class, "BrowseView.gif"));
+		chooseFilesAndButton.setIcon(SwingResourceManager.getIcon(ClassSearcherGui.class, "BrowseView.gif"));
 		chooseFilesAndButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				JFileChooser chooser = new JFileChooser();
@@ -183,15 +178,13 @@ public class ClassSearcherGui extends JFrame {
 					File path = ((File) fileList.get(0)).getParentFile();
 					chooser.setCurrentDirectory(path);
 				}
-				chooser
-						.setFileSelectionMode(JFileChooser.FILES_AND_DIRECTORIES);
+				chooser.setFileSelectionMode(JFileChooser.FILES_AND_DIRECTORIES);
 				chooser.setMultiSelectionEnabled(true);
 				int ret = chooser.showDialog(ClassSearcherGui.this, "Select");
 				if (ret == JFileChooser.APPROVE_OPTION) {
 					File[] sFiles = chooser.getSelectedFiles();
 					for (int i = 0; i < sFiles.length; ++i) {
-						((DefaultListModel) list.getModel())
-								.addElement(sFiles[i]);
+						((DefaultListModel) list.getModel()).addElement(sFiles[i]);
 						fileList.add(sFiles[i]);
 					}
 				}
@@ -204,8 +197,7 @@ public class ClassSearcherGui extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				Object[] sObs = list.getSelectedValues();
 				if (sObs == null || sObs.length == 0)
-					JOptionPane.showMessageDialog(ClassSearcherGui.this,
-							"No item is selected", "Error",
+					JOptionPane.showMessageDialog(ClassSearcherGui.this, "No item is selected", "Error",
 							JOptionPane.ERROR_MESSAGE);
 				for (int i = 0; i < sObs.length; ++i) {
 					((DefaultListModel) list.getModel()).removeElement(sObs[i]);
@@ -213,8 +205,7 @@ public class ClassSearcherGui extends JFrame {
 				}
 			}
 		});
-		deleteButton.setIcon(SwingResourceManager.getIcon(
-				ClassSearcherGui.class, "delete.gif"));
+		deleteButton.setIcon(SwingResourceManager.getIcon(ClassSearcherGui.class, "delete.gif"));
 		deleteButton.setFocusPainted(false);
 		deleteButton.setText("Remove");
 		panel_2.add(deleteButton);
@@ -284,12 +275,10 @@ public class ClassSearcherGui extends JFrame {
 		final JRadioButton rdbtnMethodName = new JRadioButton("Has Method Like");
 		panel.add(rdbtnMethodName);
 
-		final JRadioButton rdbtnExtendClassLike = new JRadioButton(
-				"Subclass Of");
+		final JRadioButton rdbtnExtendClassLike = new JRadioButton("Subclass Of");
 		panel.add(rdbtnExtendClassLike);
 
-		final JRadioButton rdbtnImplementInterface = new JRadioButton(
-				"Implementer of");
+		final JRadioButton rdbtnImplementInterface = new JRadioButton("Implementer of");
 		panel.add(rdbtnImplementInterface);
 		final ButtonGroup group = new ButtonGroup();
 		group.add(rdbtnImplementInterface);
@@ -318,8 +307,7 @@ public class ClassSearcherGui extends JFrame {
 		inputPanel.add(controlPanel, BorderLayout.SOUTH);
 		controlPanel.setPreferredSize(new Dimension(0, 55));
 		controlPanel.setMinimumSize(new Dimension(0, 60));
-		controlPanel.setBorder(new TitledBorder(new EtchedBorder(), "Control",
-				TitledBorder.DEFAULT_JUSTIFICATION,
+		controlPanel.setBorder(new TitledBorder(new EtchedBorder(), "Control", TitledBorder.DEFAULT_JUSTIFICATION,
 				TitledBorder.DEFAULT_POSITION, null, null));
 		final FlowLayout flowLayout = new FlowLayout();
 		flowLayout.setVgap(0);
@@ -327,14 +315,12 @@ public class ClassSearcherGui extends JFrame {
 		controlPanel.setLayout(flowLayout);
 
 		startButton = new JButton();
-		startButton.setIcon(SwingResourceManager.getIcon(
-				ClassSearcherGui.class, "start.gif"));
+		startButton.setIcon(SwingResourceManager.getIcon(ClassSearcherGui.class, "start.gif"));
 		startButton.setPreferredSize(new Dimension(90, 22));
 		startButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				if (fileList.size() == 0) {
-					JOptionPane.showMessageDialog(ClassSearcherGui.this,
-							"Select files and folders first.", "warning",
+					JOptionPane.showMessageDialog(ClassSearcherGui.this, "Select files and folders first.", "warning",
 							JOptionPane.WARNING_MESSAGE);
 					return;
 				}
@@ -347,6 +333,8 @@ public class ClassSearcherGui extends JFrame {
 				else
 					curJob = ZipSearcher.EXPRESSIONSELECED;
 				exp = expTextField.getText().trim();
+				exp = exp.replace('/', '.');
+				exp = exp.replace('\\', '.');
 				jobCanceled = false;
 				thread = new Thread(new Runnable() {
 					public void run() {
@@ -354,11 +342,9 @@ public class ClassSearcherGui extends JFrame {
 						currentProgressBar.setValue(0);
 						wholeProgressLabel.setText("Initializing...");
 						try {
-							editorKit.insertHTML(document,
-									document.getLength(), "<br>", 0, 0,
+							editorKit.insertHTML(document, document.getLength(), "<br>", 0, 0,
 									javax.swing.text.html.HTML.Tag.BR);
-							editorKit.insertHTML(document,
-									document.getLength(), "<hr>", 0, 0,
+							editorKit.insertHTML(document, document.getLength(), "<hr>", 0, 0,
 									javax.swing.text.html.HTML.Tag.HR);
 						} catch (BadLocationException e) {
 							e.printStackTrace();
@@ -384,18 +370,12 @@ public class ClassSearcherGui extends JFrame {
 							}
 						}
 						try {
-							document.insertString(document.getLength(),
-									"Totally ", null);
-							editorKit.insertHTML(document,
-									document.getLength(), "<font color=red>"
-											+ matchedCount
-											+ "</font> entries were matched.",
-									0, 0, javax.swing.text.html.HTML.Tag.FONT);
-							editorKit.insertHTML(document,
-									document.getLength(), "<br>", 0, 0,
+							document.insertString(document.getLength(), "Totally ", null);
+							editorKit.insertHTML(document, document.getLength(), "<font color=red>" + matchedCount
+									+ "</font> entries were matched.", 0, 0, javax.swing.text.html.HTML.Tag.FONT);
+							editorKit.insertHTML(document, document.getLength(), "<br>", 0, 0,
 									javax.swing.text.html.HTML.Tag.BR);
-							editorKit.insertHTML(document,
-									document.getLength(), "<hr>", 0, 0,
+							editorKit.insertHTML(document, document.getLength(), "<hr>", 0, 0,
 									javax.swing.text.html.HTML.Tag.HR);
 						} catch (BadLocationException e) {
 							e.printStackTrace();
@@ -405,8 +385,7 @@ public class ClassSearcherGui extends JFrame {
 						wholeProgressLabel.setText("Job completed!");
 						currentProgressLabel.setText("Zip Search Complete.");
 						wholeProgressBar.setValue(processFileCount);
-						currentProgressBar.setValue(currentProgressBar
-								.getMaximum());
+						currentProgressBar.setValue(currentProgressBar.getMaximum());
 						searchJobCompleted();
 					}
 				});
@@ -420,8 +399,7 @@ public class ClassSearcherGui extends JFrame {
 		controlPanel.add(startButton);
 
 		cancelButton = new JButton();
-		cancelButton.setIcon(SwingResourceManager.getIcon(
-				ClassSearcherGui.class, "cancel.gif"));
+		cancelButton.setIcon(SwingResourceManager.getIcon(ClassSearcherGui.class, "cancel.gif"));
 		cancelButton.setPreferredSize(new Dimension(90, 22));
 		cancelButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -440,8 +418,7 @@ public class ClassSearcherGui extends JFrame {
 		controlPanel.add(cancelButton);
 
 		resetButton = new JButton();
-		resetButton.setIcon(SwingResourceManager.getIcon(
-				ClassSearcherGui.class, "reset.gif"));
+		resetButton.setIcon(SwingResourceManager.getIcon(ClassSearcherGui.class, "reset.gif"));
 		resetButton.setPreferredSize(new Dimension(90, 22));
 		resetButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -463,8 +440,7 @@ public class ClassSearcherGui extends JFrame {
 		final JPanel statusPanel = new JPanel();
 		panel_3.add(statusPanel);
 		statusPanel.setMinimumSize(new Dimension(0, 200));
-		statusPanel.setBorder(new TitledBorder(new EtchedBorder(), "Status",
-				TitledBorder.DEFAULT_JUSTIFICATION,
+		statusPanel.setBorder(new TitledBorder(new EtchedBorder(), "Status", TitledBorder.DEFAULT_JUSTIFICATION,
 				TitledBorder.DEFAULT_POSITION, null, null));
 		statusPanel.setLayout(new BorderLayout());
 
@@ -473,8 +449,7 @@ public class ClassSearcherGui extends JFrame {
 		flowLayout_1.setVgap(2);
 		progressPanel.setLayout(flowLayout_1);
 		progressPanel.setPreferredSize(new Dimension(0, 105));
-		progressPanel.setBorder(new TitledBorder(new EtchedBorder(),
-				"Progress", TitledBorder.DEFAULT_JUSTIFICATION,
+		progressPanel.setBorder(new TitledBorder(new EtchedBorder(), "Progress", TitledBorder.DEFAULT_JUSTIFICATION,
 				TitledBorder.DEFAULT_POSITION, null, null));
 		statusPanel.add(progressPanel, BorderLayout.NORTH);
 
@@ -498,8 +473,7 @@ public class ClassSearcherGui extends JFrame {
 
 		final JScrollPane resultScrollPane = new JScrollPane();
 		resultScrollPane.setMinimumSize(new Dimension(0, 30));
-		resultScrollPane.setBorder(new TitledBorder(new EtchedBorder(),
-				"Result", TitledBorder.DEFAULT_JUSTIFICATION,
+		resultScrollPane.setBorder(new TitledBorder(new EtchedBorder(), "Result", TitledBorder.DEFAULT_JUSTIFICATION,
 				TitledBorder.DEFAULT_POSITION, null, null));
 		statusPanel.add(resultScrollPane);
 
@@ -519,15 +493,12 @@ public class ClassSearcherGui extends JFrame {
 		copyMenuItem.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				TextTransfer textTransfer = new TextTransfer();
-				textTransfer.setClipboardContents(resultEditorPane
-						.getSelectedText());
+				textTransfer.setClipboardContents(resultEditorPane.getSelectedText());
 			}
 		});
-		copyMenuItem.setIcon(SwingResourceManager.getIcon(
-				ClassSearcherGui.class, "copy.gif"));
+		copyMenuItem.setIcon(SwingResourceManager.getIcon(ClassSearcherGui.class, "copy.gif"));
 		copyMenuItem.setAutoscrolls(true);
-		copyMenuItem.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_C,
-				InputEvent.CTRL_MASK));
+		copyMenuItem.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_C, InputEvent.CTRL_MASK));
 		copyMenuItem.setText("Copy");
 		popupMenu.add(copyMenuItem);
 
@@ -554,11 +525,9 @@ public class ClassSearcherGui extends JFrame {
 						try {
 							String os = System.getProperty("os.name");
 							if (os.indexOf("indow") >= 0)
-								Runtime.getRuntime().exec(
-										"explorer " + e.getURL());
+								Runtime.getRuntime().exec("explorer " + e.getURL());
 							else if (os.indexOf("inux") >= 0)
-								Runtime.getRuntime().exec(
-										"mozilla " + e.getURL());
+								Runtime.getRuntime().exec("mozilla " + e.getURL());
 						} catch (IOException ioe) {
 							System.out.println("IOE: " + ioe);
 						}
@@ -592,8 +561,7 @@ public class ClassSearcherGui extends JFrame {
 
 	public static void setLookAndFeel() {
 		try {
-			javax.swing.UIManager
-					.setLookAndFeel("com.sun.java.swing.plaf.windows.WindowsLookAndFeel");
+			javax.swing.UIManager.setLookAndFeel("com.sun.java.swing.plaf.windows.WindowsLookAndFeel");
 		} catch (Exception ex) {
 			ex.printStackTrace();
 		}
@@ -654,9 +622,8 @@ public class ClassSearcherGui extends JFrame {
 		jobCanceled = false;
 		this.processCount = this.matchedCount = 0;
 		if (warnMsg.size() > 0)
-			JOptionPane.showMessageDialog(this, "<html>Totally <b color=red>"
-					+ warnMsg.size() + "</b> files failed to decompile.<br>"
-					+ "The result is not accurate.</html>", "Warning",
+			JOptionPane.showMessageDialog(this, "<html>Totally <b color=red>" + warnMsg.size()
+					+ "</b> files failed to decompile.<br>" + "The result is not accurate.</html>", "Warning",
 					JOptionPane.WARNING_MESSAGE);
 	}
 
@@ -672,18 +639,15 @@ public class ClassSearcherGui extends JFrame {
 	public static void centerDialog(Window frame) {
 		Dimension dialogSize = frame.getSize();
 		Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
-		frame.setLocation(screenSize.width / 2 - dialogSize.width / 2,
-				screenSize.height / 2 - dialogSize.height / 2);
+		frame.setLocation(screenSize.width / 2 - dialogSize.width / 2, screenSize.height / 2 - dialogSize.height / 2);
 	}
 
-	private static void addPopup(final Component component,
-			final JPopupMenu popup) {
+	private static void addPopup(final Component component, final JPopupMenu popup) {
 		component.addMouseListener(new MouseAdapter() {
 			public void mousePressed(MouseEvent e) {
 				if (e.isPopupTrigger()) {
 					if (component instanceof JEditorPane) {
-						String text = ((JEditorPane) component)
-								.getSelectedText();
+						String text = ((JEditorPane) component).getSelectedText();
 						if (text == null || text.equals(""))
 							popup.getComponent(0).setEnabled(false);
 						else
@@ -696,8 +660,7 @@ public class ClassSearcherGui extends JFrame {
 			public void mouseReleased(MouseEvent e) {
 				if (e.isPopupTrigger()) {
 					if (component instanceof JEditorPane) {
-						String text = ((JEditorPane) component)
-								.getSelectedText();
+						String text = ((JEditorPane) component).getSelectedText();
 						if (text == null || text.equals(""))
 							popup.getComponent(0).setEnabled(false);
 						else
@@ -727,16 +690,13 @@ class CompanyLogoListCellRenderer extends DefaultListCellRenderer {
    */
 	private static final long serialVersionUID = 8779560660143958081L;
 
-	private static ImageIcon fileImage = SwingResourceManager.getIcon(
-			ClassSearcherGui.class, "file_obj.gif");
+	private static ImageIcon fileImage = SwingResourceManager.getIcon(ClassSearcherGui.class, "file_obj.gif");
 
-	private static ImageIcon folderImage = SwingResourceManager.getIcon(
-			ClassSearcherGui.class, "folder.gif");
+	private static ImageIcon folderImage = SwingResourceManager.getIcon(ClassSearcherGui.class, "folder.gif");
 
-	public Component getListCellRendererComponent(JList list, Object value,
-			int index, boolean isSelected, boolean cellHasFocus) {
-		Component retValue = super.getListCellRendererComponent(list, value,
-				index, isSelected, cellHasFocus);
+	public Component getListCellRendererComponent(JList list, Object value, int index, boolean isSelected,
+			boolean cellHasFocus) {
+		Component retValue = super.getListCellRendererComponent(list, value, index, isSelected, cellHasFocus);
 		if (((File) value).isDirectory())
 			setIcon(folderImage);
 		else
@@ -779,12 +739,10 @@ final class TextTransfer implements ClipboardOwner {
 		Clipboard clipboard = Toolkit.getDefaultToolkit().getSystemClipboard();
 		// odd: the Object param of getContents is not currently used
 		Transferable contents = clipboard.getContents(null);
-		boolean hasTransferableText = (contents != null)
-				&& contents.isDataFlavorSupported(DataFlavor.stringFlavor);
+		boolean hasTransferableText = (contents != null) && contents.isDataFlavorSupported(DataFlavor.stringFlavor);
 		if (hasTransferableText) {
 			try {
-				result = (String) contents
-						.getTransferData(DataFlavor.stringFlavor);
+				result = (String) contents.getTransferData(DataFlavor.stringFlavor);
 			} catch (UnsupportedFlavorException ex) {
 				// highly unlikely since we are using a standard DataFlavor
 				System.out.println(ex);
